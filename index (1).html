@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>মিষ্টি কেক | হোমমেইড কেকের দোকান</title>
+<meta name="description" content="মিষ্টি কেক - হাতে বানানো হোমমেইড কেক। হোয়াটসঅ্যাপে সহজেই অর্ডার করুন।">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@600;700;800&family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--berry:#d6336c;--berry-d:#a61e4d;--plum:#3d1a33;--blush:#fff0f5;--butter:#ffd43b;--mint:#c5f6d8;--wa:#128c4a;--wa-d:#0d6e3a;--ink:#2b1a26;--mute:#6f5a67}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Hind Siliguri',system-ui,sans-serif;background:var(--blush);color:var(--ink);line-height:1.7}
+h1,h2,h3{font-family:'Baloo Da 2','Hind Siliguri',sans-serif;line-height:1.25}
+.wrap{width:min(1080px,92%);margin:0 auto}
+a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid var(--butter);outline-offset:2px}
+
+/* Header */
+header{background:var(--berry);color:#fff;text-align:center;padding:64px 16px 84px;position:relative;overflow:hidden}
+header::before,header::after{content:"";position:absolute;border-radius:50%;background:var(--butter);opacity:.9}
+header::before{width:150px;height:150px;top:-60px;left:-40px}
+header::after{width:90px;height:90px;bottom:30px;right:-25px;background:var(--plum)}
+header .in{position:relative;z-index:1}
+.logo{font-size:60px;display:block}
+header h1{font-size:clamp(46px,12vw,92px);font-weight:800;letter-spacing:-1px}
+header p{font-size:clamp(17px,4vw,23px);max-width:520px;margin:4px auto 0}
+.cta{display:inline-block;margin-top:24px;background:var(--butter);color:var(--plum);font-weight:600;padding:12px 30px;border-radius:50px;text-decoration:none;transition:transform .2s}
+.cta:hover{transform:scale(1.05)}
+.wave{position:absolute;left:0;bottom:-1px;width:100%;height:40px;z-index:2}
+
+/* Sections */
+section{padding:56px 0}
+.head{text-align:center;margin-bottom:32px}
+.head h2{font-size:clamp(28px,6vw,40px);color:var(--plum)}
+.head p{color:var(--mute)}
+
+/* About */
+.about{background:#fff}
+.about .box{display:grid;grid-template-columns:1fr 1.4fr;gap:32px;align-items:center}
+.about .pic{background:var(--mint);border-radius:40% 60% 55% 45%/50% 45% 55% 50%;font-size:96px;text-align:center;padding:36px 10px}
+.about p{color:var(--mute);margin-bottom:12px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.tags span{background:var(--blush);color:var(--berry-d);border:2px solid var(--berry);padding:3px 14px;border-radius:50px;font-size:14px;font-weight:500}
+
+/* Cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px}
+.card{background:#fff;border-radius:24px;overflow:hidden;border:2px solid var(--plum);display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-6px);box-shadow:6px 6px 0 var(--berry)}
+.card .ic{font-size:72px;text-align:center;padding:24px 0}
+.card .bd{padding:16px 18px 20px;display:flex;flex-direction:column;flex:1;border-top:2px solid var(--plum)}
+.card h3{font-size:21px;color:var(--plum)}
+.card p{color:var(--mute);font-size:15px;margin:4px 0 12px;flex:1}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+select{font:inherit;font-size:14px;padding:6px 8px;border:2px solid var(--plum);border-radius:10px;background:#fff;color:var(--ink)}
+.price{font-family:'Baloo Da 2',sans-serif;font-size:26px;font-weight:800;color:var(--berry-d)}
+.order{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--wa);color:#fff;text-decoration:none;font-weight:600;padding:11px 12px;border-radius:50px;font-size:15px;transition:background .2s}
+.order:hover{background:var(--wa-d)}
+
+/* How to order */
+.how{background:var(--plum);color:#fff}
+.how .head h2{color:#fff}.how .head p{color:#e9cfe0}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.step{background:rgba(255,255,255,.08);border-radius:20px;padding:22px;text-align:center}
+.step b{display:block;font-size:40px}
+.step h3{font-size:19px;color:var(--butter)}
+.step p{font-size:15px;color:#e9cfe0}
+
+/* Contact */
+.contact{text-align:center}
+.contact .num{font-family:'Baloo Da 2',sans-serif;font-size:clamp(28px,7vw,44px);font-weight:800;color:var(--berry-d)}
+.contact .order{display:inline-flex;padding:13px 34px;font-size:17px;margin-top:10px}
+footer{background:#24101f;color:#d9bfd0;text-align:center;padding:18px;font-size:14px}
+.fab{position:fixed;right:16px;bottom:16px;width:58px;height:58px;border-radius:50%;background:var(--wa);color:#fff;font-size:28px;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 6px 16px rgba(0,0,0,.3);z-index:50}
+
+@media(max-width:700px){.about .box{grid-template-columns:1fr}.about .pic{font-size:72px}section{padding:42px 0}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="in">
+    <span class="logo">🎂</span>
+    <h1>মিষ্টি কেক</h1>
+    <p>ভালোবাসায় মাখা, হাতে গড়া মিষ্টি মুহূর্ত</p>
+    <a class="cta" href="#cakes">আমাদের কেক দেখুন</a>
+  </div>
+  <svg class="wave" viewBox="0 0 1200 40" preserveAspectRatio="none"><path d="M0 40V20Q150 0 300 20T600 20T900 20T1200 20V40Z" fill="#fff0f5"/></svg>
+</header>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="head"><h2>আমাদের সম্পর্কে</h2></div>
+    <div class="box">
+      <div class="pic">🧁🍰</div>
+      <div>
+        <p><strong>মিষ্টি কেক</strong> একটি হোমমেইড কেকের দোকান। জন্মদিন, বিবাহবার্ষিকী কিংবা যেকোনো আনন্দের দিনে আমরা ঘরোয়া পরিবেশে, ভালো মানের উপকরণে তাজা কেক বানাই।</p>
+        <p>প্রতিটি অর্ডার আলাদাভাবে তৈরি হয়। আপনার পছন্দমতো ডিজাইন, ফ্লেভার ও মেসেজ লেখা কেকও বানিয়ে দেওয়া হয়।</p>
+        <div class="tags"><span>তাজা উপকরণ</span><span>হোমমেইড</span><span>কাস্টম ডিজাইন</span><span>হোম ডেলিভারি</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cakes">
+  <div class="wrap">
+    <div class="head"><h2>আমাদের কেকের তালিকা</h2><p>সাইজ বেছে নিন, দাম নিজে থেকেই বদলে যাবে</p></div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="head"><h2>অর্ডার করার নিয়ম</h2></div>
+    <div class="steps">
+      <div class="step"><b>🍰</b><h3>কেক ও সাইজ বাছুন</h3><p>পছন্দের কেকের নিচে সাইজ ঠিক করুন।</p></div>
+      <div class="step"><b>💬</b><h3>হোয়াটসঅ্যাপে মেসেজ</h3><p>অর্ডার বাটনে চাপলে মেসেজ লেখা অবস্থায় হোয়াটসঅ্যাপ খুলবে।</p></div>
+      <div class="step"><b>📅</b><h3>তারিখ ও ঠিকানা জানান</h3><p>কবে, কোথায় লাগবে এবং কেকে কী লেখা থাকবে তা জানান।</p></div>
+      <div class="step"><b>🚚</b><h3>কেক বুঝে নিন</h3><p>নির্ধারিত সময়ে ডেলিভারি বা সরাসরি সংগ্রহ করুন।</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="head"><h2>কাস্টম কেক চান?</h2><p>ডিজাইন ও ফ্লেভার জানিয়ে সরাসরি মেসেজ করুন</p></div>
+    <div class="num">০১৯০৩-৫৭৬৬২০</div>
+    <a class="order" id="custom" href="https://wa.me/8801903576620">💬 হোয়াটসঅ্যাপে মেসেজ করুন</a>
+  </div>
+</section>
+
+<footer>© <span id="yr"></span> মিষ্টি কেক | সর্বস্বত্ব সংরক্ষিত</footer>
+<a class="fab" id="fab" href="https://wa.me/8801903576620" aria-label="হোয়াটসঅ্যাপে মেসেজ করুন">💬</a>
+
+<script>
+/* ===== এখানে আপনার কেকের নাম, বিবরণ ও দাম বদলান (দাম: ১ পাউন্ড, ২ পাউন্ড, ৩ পাউন্ড) ===== */
+var PHONE = "8801903576620";
+var cakes = [
+  {n:"চকলেট ডিলাইট কেক", i:"🍫", c:"#f3d9c8", d:"রিচ চকলেট স্পঞ্জ আর গাঢ় চকলেট গ্যানাশে মোড়ানো।", p:[950,1850,2700]},
+  {n:"রেড ভেলভেট কেক",   i:"❤️", c:"#ffd1d9", d:"নরম লাল স্পঞ্জের সাথে ক্রিম চিজ ফ্রস্টিং।", p:[1200,2350,3450]},
+  {n:"ভ্যানিলা স্ট্রবেরি কেক", i:"🍓", c:"#ffe0ea", d:"হালকা ভ্যানিলা স্পঞ্জ, তাজা ক্রিম ও স্ট্রবেরি।", p:[850,1650,2400]},
+  {n:"ব্ল্যাক ফরেস্ট কেক", i:"🍒", c:"#e2d1f9", d:"চকলেট স্পঞ্জ, চেরি ফিলিং আর ক্রিমের ক্লাসিক মিশেল।", p:[1000,1950,2850]},
+  {n:"বাটারস্কচ কেক",    i:"🍯", c:"#fff0c2", d:"ক্যারামেলের মচমচে ক্রাঞ্চ আর নরম ক্রিমি লেয়ার।", p:[900,1750,2550]},
+  {n:"রসমালাই কেক",     i:"🥥", c:"#d8f3dc", d:"এলাচের সুগন্ধি স্পঞ্জ ও রসমালাই ক্রিমের দেশি স্বাদ।", p:[1300,2550,3750]}
+];
+var sizes = ["১ পাউন্ড","২ পাউন্ড","৩ পাউন্ড"];
+
+function bn(x){return String(x).replace(/\d/g,function(d){return "০১২৩৪৫৬৭৮৯"[d]})}
+function wa(msg){return "https://wa.me/"+PHONE+"?text="+encodeURIComponent(msg)}
+
+var grid = document.getElementById("grid");
+cakes.forEach(function(k,idx){
+  var card = document.createElement("div");
+  card.className = "card";
+  card.innerHTML =
+    '<div class="ic" style="background:'+k.c+'">'+k.i+'</div>'+
+    '<div class="bd"><h3>'+k.n+'</h3><p>'+k.d+'</p>'+
+    '<div class="row"><select aria-label="সাইজ">'+
+      sizes.map(function(s,j){return '<option value="'+j+'">'+s+'</option>'}).join("")+
+    '</select><div class="price"></div></div>'+
+    '<a class="order" target="_blank" rel="noopener noreferrer">💬 হোয়াটসঅ্যাপে অর্ডার করুন</a></div>';
+  var sel = card.querySelector("select"), pr = card.querySelector(".price"), a = card.querySelector(".order");
+  function upd(){
+    var j = +sel.value;
+    pr.textContent = "৳" + bn(k.p[j]);
+    a.href = wa("আসসালামু আলাইকুম, আমি মিষ্টি কেক থেকে '"+k.n+"' ("+sizes[j]+", ৳"+bn(k.p[j])+") অর্ডার করতে চাই। ডেলিভারির তারিখ ও ঠিকানা: ");
+  }
+  sel.addEventListener("change",upd); upd();
+  grid.appendChild(card);
+});
+
+var hi = "আসসালামু আলাইকুম, আমি মিষ্টি কেক থেকে একটি কাস্টম কেক অর্ডার করতে চাই।";
+["custom","fab"].forEach(function(id){
+  var el = document.getElementById(id);
+  el.href = wa(hi); el.target = "_blank"; el.rel = "noopener noreferrer";
+});
+document.getElementById("yr").textContent = bn(new Date().getFullYear());
+</script>
+</body>
+</html>
